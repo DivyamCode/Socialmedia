@@ -1,0 +1,66 @@
+const mongoose = require('mongoose');
+
+const UserProfileSchema = new mongoose.Schema({
+    UserName:{
+        type:String,
+        required:true,
+        unique:true
+    },
+    NumPost:{
+        type:Number,
+        required:true
+    },
+    NumFollower:{
+        type:Number,
+        required:true
+    },
+    NumFollowing:{
+        type:Number,
+        required:true
+    },
+    ListFollower:[{
+        UserName:String,
+        date:{
+            type:Date
+        }
+    }],
+    ListFollowing:[{
+        UserName:String,
+        date:{
+            type:Date
+        }
+    }],
+    Name:{
+        type:String,
+        required:true
+    },
+    Bio:{
+        type:String,
+    },
+    HighlightMedia:[{
+        post:[{
+            url:String,
+            MediaType:String
+        }]
+    }],
+    postMedia:[{
+        post:[{
+            url:String,
+            MediaType:String
+        }]
+    }],
+    saveMedia:[{
+        post:[{
+            url:String,
+            MediaType:String
+        }]
+    }],
+    tagMedia:[{
+        post:[{
+            url:String,
+            MediaType:String
+        }]
+    }],
+});
+
+module.exports = mongoose.model("userProfile",UserProfileSchema);

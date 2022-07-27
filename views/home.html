@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com-->
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+        <style>
+            /* Google Fonts - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #4070F4;
+}
+nav{
+    border-radius: 15px;
+    background: #FFF;
+    padding: 0 40px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.nav-content{
+    display: flex;
+    height: 95px;
+    align-items: center;
+    list-style: none;
+    position: relative;
+}
+.link-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 120px;
+    width: 95px;
+    text-decoration: none;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.link-item.active{
+    transform: translateY(-10px);
+}
+.link-icon{
+    font-size: 38px;
+    color: #999;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.link-item.active .link-icon{
+    color: #4070F4;
+}
+.link-text{
+    position: absolute;
+    font-size: 12px;
+    font-weight: 500;
+    color: #4070F4;
+    opacity: 0;
+    transform: translateY(32px);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.link-item.active .link-text{
+    opacity: 1;
+}
+/* .indicator{
+    position: absolute;
+    top: -14px;
+    left: 48px;
+    height: 36px;
+    width: 36px;
+    background-color: #FFF;
+    border: 6px solid #4070F4;
+    border-radius: 70%;
+    transform: translateX(-50%);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.indicator::before,
+.indicator::after{
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    height: 24px;
+    width: 19px;
+}
+.indicator::before{
+    left: -22px;
+    background-color: #FFF;
+    border-top-right-radius: 15px;
+    box-shadow: 1px -13px #4070F4;
+}
+.indicator::after{
+    right: -22px;
+    background-color: #FFF;
+    border-top-left-radius: 15px;
+    box-shadow: -1px -13px #4070F4;
+} */
+.barstrip{
+    margin-top: 10px;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+        </style>
+                        
+    </head>
+    <body>
+        <div class="barstrip">
+            <nav class="nav">
+                <ul class="nav-content">
+                    <li class="nav-list">
+                        <a href="/home" class="link-item active">
+                            <i class='bx bxs-home link-icon'></i>
+                            <span class="link-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-list">
+                        <a href="#" class="link-item">
+                            <i class='bx bxs-message-rounded link-icon'></i>
+                            <span class="link-text">Messages</span>
+                        </a>
+                    </li>
+                    <li class="nav-list">
+                        <a href="#" class="link-item">
+                            <i class='bx bx-add-to-queue link-icon'></i>
+                            <span class="link-text">Post</span>
+                        </a>
+                    </li>
+                    <li class="nav-list">
+                        <a href="#" class="link-item">
+                            <i class='bx bxs-notification link-icon' ></i>
+                            <span class="link-text">Notification</span>
+                        </a>
+                    </li>
+                    <li class="nav-list">
+                        <a href="#" class="link-item">
+                            <i class='bx bxs-user link-icon'></i>
+                            <span class="link-text">Profile</span>
+                        </a>
+                    </li>
+    
+                    <span class="indicator"></span>
+                </ul>
+            </nav>
+
+        </div>
+
+        
+        <script>
+            const linkItems = document.querySelectorAll(".link-item");
+
+            linkItems.forEach((linkItem, index) => {
+                linkItem.addEventListener("click", () => {
+                    document.querySelector(".active").classList.remove("active");
+                    linkItem.classList.add("active");
+
+                    const indicator = document.querySelector(".indicator");
+
+                    indicator.style.left = `${index * 95 + 48}px`;
+                })
+            })
+        </script>
+
+        
+    </body>
+</html>
