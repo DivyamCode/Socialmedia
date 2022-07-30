@@ -1,6 +1,5 @@
 const SignUp = require("../../model/userModel");
 const bcrypt = require('bcryptjs');
-const { use } = require("../routes/userRouteAPI");
 const { sendTokenApi } = require("../../utils/sendtoken");
 const { gettimeStampH } = require("../../utils/time");
 
@@ -27,6 +26,12 @@ exports.signup = async(req,res,next)=>{
                 ,UserName,Password,usercreateAt,userlastUpdateAt,
                 userlastLoginAt
         });
+        //another model perform action;
+        const NumFollower = 0;
+        const NumFollowing = 0;
+        const NumPost = 0;
+        const profileCreate = await Profile.create({UserName,NumFollower,
+                    NumFollowing,NumPost});
         sendTokenApi(signup,201,res);
            
 }
@@ -37,9 +42,11 @@ exports.login = async(req,res,next)=>{
     if(!email || !password){
         res.status(404).send("PLease enter Email and Password")
     }
-    const user = await SignUp.findOne({email}).select("+password");
+    const user = await SignUp.findOne({email}).select("+Password");
 
-    if(!user){
+    const deboolUser = Boolean(user);
+
+    if(!deboolUser){
         res.status(404).redirect("/login")
     }
     const isPasswordMatched =await bcrypt.compare(password,user.Password);
@@ -52,3 +59,31 @@ exports.login = async(req,res,next)=>{
     }
     sendTokenApi(user,200,res); 
 }
+exports.profile_get_api= async(req,res,next)=>{
+    const username = req.user.UserName;
+    const User = await Profile.findOne({username});
+    res.json({
+        User
+    })
+}
+exports.editProfile = async(req,res,next)=>{
+    const {FullName,email
+        ,UserName,PhoneNo,Bio,LinkedInLink
+        } = req.body;
+    
+    const UniUser = await SignUp.findOne({UserName});
+    if(!(req.user.UserName ==UserName)){
+        if(UniUser){
+        res.status(404).json({
+            message:"Username is already taken"
+        });
+    }}
+    const EditProfile = await SignUp.findOneAndUpdate({UserName:req.user.UserName},{email,FullName,UserName,PhoneNo});
+    const EditProfile1 = await Profile.findOneAndUpdate({UserName:req.user.UserName},{UserName,Bio,LinkedInLink});
+    res.status(200).json({
+        success:true,
+        message:"Updated profile successfullty"
+    })
+
+}
+

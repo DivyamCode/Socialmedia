@@ -18,11 +18,21 @@ const UserSignupSchema = new mongoose.Schema({
     },
     Password:{
         type:String,
-        required:true
+        required:true,
+        select:false
     },
-    userlastLoginAt:String,
-    userlastUpdateAt:String,
-    usercreateAt:String,
+    userlastLoginAt:{
+        type:String,
+        select:false
+    },
+    userlastUpdateAt:{
+        type:String,
+        select:false
+    },
+    usercreateAt:{
+        type:String,
+        select:false
+    },
     resetPasswordToken:String,
     resetPasswordExpire:Date,
 });

@@ -1,0 +1,161 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+	<title>FILE UPLOAD DEMO</title>
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
+
+</head> -->
+
+<!-- <body>
+	<h1>Single File Upload Demo</h1>
+
+	<form action="/upload/dp"
+	enctype="multipart/form-data" method="POST">
+	
+		<span>Upload Profile Picture:</span>
+		<input type="file" name="mypic" required/> <br>
+        <input type="text" value="0933bc3902464014bebe49f59811070e" name="index">
+		<input type="submit" value="submit">
+	</form>
+</body> -->
+<!-- <body>
+	<div class="container">
+		<div class="row">
+			<div class="card" style="width: 18rem;">
+			<img src="http://localhost:4000/9c27e17d80fa450c1538af1b15b41659121355311.jpeg" class="card-img-top" alt="...">
+			<div class="card-body">
+			  <h5 class="card-title">Card title</h5>
+			  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+			  <a href="#" class="btn btn-primary">Go somewhere</a>
+			</div>
+		  </div></div>
+	</div>
+	 
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Social Profile widget with photos - Bootdey.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.0.45/css/materialdesignicons.min.css" integrity="sha256-nRyVCcVDSlWN9d68r9M+rKBLE4k9Cp1j3XSY/umjvvU=" crossorigin="anonymous" />
+<div class="container">
+				<form action="/upload/dp"
+				enctype="multipart/form-data" method="POST">
+					<div class="card ml-5" style="width: 18rem;">
+						<img src="http://localhost:4000/9c27e17d80fa450c1538af1b15b41659121355311.jpeg" class="card-img-top dpimg ml-5 mt-5 mb-1" alt="...">
+						<div class="card-body">
+							<span class="ml-5">Upload Profile Picture:</span>
+						  <input class="ml-3 mt-3 mb-2" type="file" name="mypic" required/> <br>
+						  
+						  <div class="row ml-3 mb-1 mt-2">
+							
+							<button style="border: none;" class="mr-1 editP" type="submit" >Upload Pic</button>
+							<button style="border: none;" class="ml-2 editP" ><a>Save Picture</a></button>
+
+						  </div>
+						  <div class="row mb-3 ml-0">
+							<a class="ml-3  editP" href="" >back</a>
+						  </div>
+						</div>    
+               		 </div>
+					</form>
+</div>
+
+
+
+
+
+
+<style type="text/css">
+
+body{
+    background:#f5f5f5;
+    margin-top:20px;
+}
+.xp-social-profile-avatar img {
+  border: 5px solid #fff;
+  margin-top: -10px;
+}
+.xp-social-profile-avatar .xp-social-profile-live {
+  position: absolute;
+  bottom: 15px;
+  margin: 0px -20px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  background-color: #2bcd72;
+}
+.dpimg{
+                width: 180px;
+                height: 180px;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+
+.text-black {
+    color: #555555 !important;
+}
+.mb-1, .my-1 {
+    margin-bottom: .25rem!important;
+}
+.mt-1, .my-1 {
+    margin-top: .25rem!important;
+}
+.h5, h5 {
+    font-size: 1.25rem;
+}
+
+.card-header:first-child {
+    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+}
+.card-header {
+    border-bottom: 1px solid rgba(85, 85, 85, 0.05);
+}
+.editP{
+                background-color: rgb(161, 228, 119); /* Blue background */
+                    border: none; /* Remove borders */
+                    color: white; /* White text */
+                    padding: 12px 16px; /* Some padding */
+                    font-size: 16px; /* Set a font size */
+                    cursor: pointer; /* Mouse pointer on hover */
+                    margin-top: 10px; 
+                }
+.bg-white {
+    background-color: #ffffff !important;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 0 30px 0 rgba(200, 200, 200, 0.2);
+}
+.m-b-30 {
+    margin-bottom: 30px;
+}
+.dpp{
+    width: 200px;
+    height: 200px;
+}
+.roww{
+    margin:auto;
+    margin-left: 300px;
+}
+</style>
+
+<script type="text/javascript">
+
+
+</script>
+</body>
+</html>

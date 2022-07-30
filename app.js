@@ -14,18 +14,17 @@ app.use(cors());
 
 //this for template engine and serving static file
 
-// app.use(express.static(__dirname + '/public'));
-// app.use(express.static(__dirname + '/upload'));
-// console.log(__dirname + '/public');
+
 // View Engine Setup
 app.set('view engine', 'html');
 app.engine('html', require('hbs').__express);
+app.use(express.static(__dirname + '/img'));
+app.use(express.static(__dirname + '/assets/profile'));
 
 
 //Route imports
 const userRoute = require("./routes/userRoutes");
 const userRouteApi = require("./api/routes/userRouteAPI");
-
 
 app.use("",userRoute);
 app.use("/api/v1",userRouteApi);

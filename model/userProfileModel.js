@@ -30,9 +30,8 @@ const UserProfileSchema = new mongoose.Schema({
             type:Date
         }
     }],
-    Name:{
-        type:String,
-        required:true
+    avatar:{
+        type:String
     },
     Bio:{
         type:String,
@@ -61,6 +60,7 @@ const UserProfileSchema = new mongoose.Schema({
             MediaType:String
         }]
     }],
+    LinkedInLink:String
 });
 
 module.exports = mongoose.model("userProfile",UserProfileSchema);
