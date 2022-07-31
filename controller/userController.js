@@ -87,8 +87,8 @@ exports.signup_get = async(req,res,next)=>{
     res.render("signup");
 }
 exports.profile_get_post= async(req,res,next)=>{
-        const username = req.user.UserName;
-        const User = await Profile.findOne({username});
+        const UserName = req.user.UserName;
+        const User = await Profile.findOne({UserName});
         res.render("profile",{user:req.user,User:User});
 }
 

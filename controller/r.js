@@ -91,4 +91,5 @@ exports.temp_p = async(req,res,next)=>{
 		let avatar = updpTemp.avatarTemp;
 		const updp = await userProfile.findOneAndUpdate({UserName:req.user.UserName},{avatar});
 		res.redirect(`/u/${updpTemp.UserName}`)
+
 }
