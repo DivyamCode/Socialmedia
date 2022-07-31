@@ -13,30 +13,22 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.0.45/css/materialdesignicons.min.css" integrity="sha256-nRyVCcVDSlWN9d68r9M+rKBLE4k9Cp1j3XSY/umjvvU=" crossorigin="anonymous" />
 <div class="container">
-		<form action="/upload/dp" enctype="multipart/form-data" method="POST">
-			<div class="card ml-5" style="width: 18rem;">
-				<img src="../{{avatar}}" class="card-img-top dpimg ml-5 mt-5 mb-1" alt="...">
-					<div class="card-body">
-						<span class="ml-5">Upload Profile Picture:</span>
-						<input class="ml-3 mt-3 mb-2" type="file" name="mypic"/> <br>
-						  
-					    <div class="row ml-3 mb-1 mt-2">
-							
-							<button style="border: none;" class="mr-1 editP" type="submit" >Upload Pic</button>
-							<button style="border: none;" class="ml-2 editP" ><a style="text-decoration: none;" href="../upload/dp/fix">Save Picture</a></button>
-
-						</div>
-						<div class="row mb-3 ml-0">
-                        <form>
-                                <input class="ml-3  editP" type="button" value="Go back!" onclick="history.back()">
-                        </form>
-					</div>
+	<form action="/post/upload" enctype="multipart/form-data" method="POST">
+		<div class="card ml-2" style="width: 100%;">
+			<img src="../{{plink}}" class="card-img-top ml-3 dpimg mt-5 mb-1" alt="...">
+			<div class="card-body">
+				<span class="ml-3">Create Post</span>
+				<input class="ml-3 mt-3 mb-2" type="file" name="mypic" required/> <br>
+                <button type="submit" class="editP ml-3" >Proceed</button>
+				<div class="row mb-3 ml-0">
+                    <form>
+                        <input class="ml-3  editP" type="button" value="Cancel" onclick="history.back()">
+                    </form>
 				</div>    
-            </div>
-		</form>
+			</div>      
+        </div>
+	</form>
 </div>
-
-
 <style type="text/css">
 
 body{
@@ -58,11 +50,10 @@ body{
   background-color: #2bcd72;
 }
 .dpimg{
-                width: 180px;
-                height: 180px;
-                object-fit: cover;
-                border-radius: 50%;
-            }
+  width: 350px;
+  height: 420px;
+  object-fit: contain;
+}
 
 .text-black {
     color: #555555 !important;
@@ -84,14 +75,14 @@ body{
     border-bottom: 1px solid rgba(85, 85, 85, 0.05);
 }
 .editP{
-                background-color: rgb(161, 228, 119); /* Blue background */
-                    border: none; /* Remove borders */
-                    color: white; /* White text */
-                    padding: 12px 16px; /* Some padding */
-                    font-size: 16px; /* Set a font size */
-                    cursor: pointer; /* Mouse pointer on hover */
-                    margin-top: 10px; 
-                }
+        background-color: rgb(186, 233, 157); /* Blue background */
+        border: none; /* Remove borders */
+        color: white; /* White text */
+        padding: 10px 12px; /* Some padding */
+        font-size: 16px; /* Set a font size */
+        cursor: pointer; /* Mouse pointer on hover */
+        margin-top: 10px; 
+    }
 .bg-white {
     background-color: #ffffff !important;
 }

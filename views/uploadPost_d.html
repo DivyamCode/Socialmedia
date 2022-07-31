@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Social Profile widget with photos - Bootdey.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.0.45/css/materialdesignicons.min.css" integrity="sha256-nRyVCcVDSlWN9d68r9M+rKBLE4k9Cp1j3XSY/umjvvU=" crossorigin="anonymous" />
+<div class="container">
+	<form action="/post/upload/save" method="POST">
+		<div class="card ml-1" style="width: 100%;">
+			<img src="../{{plink}}" class="card-img-top ml-3 dpimg mt-1 mb-1" alt="...">
+			<div class="card-body">
+				<span class="ml-3">Create Post</span>
+
+                <div class="row mb-1 ml-0">
+                    <input class="editI ml-3" type="text" placeholder="Enter Title" name="Title" >
+				</div>
+                <div class="row mb-1 ml-0">
+                    <input class="editI ml-3" type="text" placeholder="Enter Caption" name="Caption" >
+				</div>
+                <div class="row mb-1 ml-0">
+                    <input class="editI ml-3" type="text" placeholder="Enter location" name="Location" >
+				</div>
+                <div class="row mb-1 ml-0">
+                    <input class="editI ml-3" type="text" placeholder="mention someone" name="Tag" >
+				</div>
+                <div class="form-check ml-3 mt-4">
+                    <input class="form-check-input" name="hideLikes" type="checkbox" value="false">
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Hide likes 
+                    </label>
+                </div>
+                <div class="form-check ml-3">
+                    <input class="form-check-input" name="CommentOff" type="checkbox" value="true" >
+                    <label class="form-check-label" for="flexCheckChecked">
+                      Disable Comments
+                    </label>
+                </div>
+                <button type="submit" class="editP mt-3 ml-3" >Post</button>
+                <div class="row mt-2 mb-1 ml-0">
+                    <a href="" class=" editP ml-3">Save in Draft</a>
+				</div>
+                <div class="row">
+                    <div class="row mt-2 ml-3 mb-3 ml-0">
+                        <form>
+                            <input class="ml-3 editP  " type="button" value="Cancel" onclick="history.back()">
+                        </form>
+                    </div> 
+                </div>           
+			</div>      
+        </div>
+	</form>
+</div>
+<style type="text/css">
+
+body{
+    background:#f5f5f5;
+    margin-top:20px;
+}
+.xp-social-profile-avatar img {
+  border: 5px solid #fff;
+  margin-top: -10px;
+}
+.xp-social-profile-avatar .xp-social-profile-live {
+  position: absolute;
+  bottom: 15px;
+  margin: 0px -20px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  background-color: #2bcd72;
+}
+.dpimg{
+  width: 350px;
+  height: 420px;
+  object-fit: contain;
+}
+.editI{
+    background-color:  #D0D0D0;
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 10px 12px;
+    font-size: 16px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+    margin-top: 10px; 
+}
+
+.text-black {
+    color: #555555 !important;
+}
+.mb-1, .my-1 {
+    margin-bottom: .25rem!important;
+}
+.mt-1, .my-1 {
+    margin-top: .25rem!important;
+}
+.h5, h5 {
+    font-size: 1.25rem;
+}
+
+.card-header:first-child {
+    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+}
+.card-header {
+    border-bottom: 1px solid rgba(85, 85, 85, 0.05);
+}
+.editP{
+        background-color: rgb(186, 233, 157); /* Blue background */
+        border: none; /* Remove borders */
+        color: white; /* White text */
+        padding: 10px 12px; /* Some padding */
+        font-size: 16px; /* Set a font size */
+        cursor: pointer; /* Mouse pointer on hover */
+        /* margin-top: 10px;
+        margin-top: 10px; */
+    }
+.bg-white {
+    background-color: #ffffff !important;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 0 30px 0 rgba(200, 200, 200, 0.2);
+}
+.m-b-30 {
+    margin-bottom: 30px;
+}
+.dpp{
+    width: 200px;
+    height: 200px;
+}
+.roww{
+    margin:auto;
+    margin-left: 300px;
+}
+</style>
+
+<script type="text/javascript">
+
+
+</script>
+</body>
+</html>

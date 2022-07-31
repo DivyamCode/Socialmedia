@@ -33,28 +33,16 @@ const UserProfileSchema = new mongoose.Schema({
     avatar:{
         type:String
     },
+    avatarPrev:[{
+        avatar:String
+    }],
+    avatarTemp:{
+        type:String
+    },
     Bio:{
         type:String,
     },
     HighlightMedia:[{
-        post:[{
-            url:String,
-            MediaType:String
-        }]
-    }],
-    postMedia:[{
-        post:[{
-            url:String,
-            MediaType:String
-        }]
-    }],
-    saveMedia:[{
-        post:[{
-            url:String,
-            MediaType:String
-        }]
-    }],
-    tagMedia:[{
         post:[{
             url:String,
             MediaType:String
